@@ -7,7 +7,7 @@ export default function RoomerDesignerLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarShowLabel: false, // Hide labels for a cleaner look
+        tabBarShowLabel: true, // Hide labels for a cleaner look
         tabBarActiveTintColor: '#2f95dc', // Color of the active tab icon
         tabBarInactiveTintColor: '#8e8e93', // Color of inactive tab icons
         tabBarStyle: {
@@ -24,6 +24,7 @@ export default function RoomerDesignerLayout() {
       <Tabs.Screen
         name='home'
         options={{
+         tabBarLabel:'Home',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='home-outline' color={color} size={size} />
@@ -33,6 +34,7 @@ export default function RoomerDesignerLayout() {
       <Tabs.Screen
         name='explore'
         options={{
+         tabBarLabel:'Explore',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='search-outline' color={color} size={size} />
@@ -42,6 +44,7 @@ export default function RoomerDesignerLayout() {
       <Tabs.Screen
         name='profile'
         options={{
+         tabBarLabel:'Profile',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='person-outline' color={color} size={size} />
