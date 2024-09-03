@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from '@clerk/clerk-expo'
 import { Slot } from 'expo-router'
 import { tokenCache } from "@/lib/auth";
+import { Text } from "react-native";
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
@@ -23,9 +24,10 @@ export default function RootLayout() {
         </SignedIn>
 
         <SignedOut>
-          <Stack screenOptions={{ headerShown: false }}>
+          {/* <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name='(auth)' options={{ headerShown: false }} />
-          </Stack>
+          </Stack> */}
+          <Text>Sing out</Text>
         </SignedOut>
 
       </ClerkLoaded>
