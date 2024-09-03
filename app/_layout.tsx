@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo'
+import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from '@clerk/clerk-expo'
 import { Slot } from 'expo-router'
 import { tokenCache } from "@/lib/auth";
 
@@ -15,9 +15,19 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        </Stack>
+
+        <SignedIn>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          </Stack>
+        </SignedIn>
+
+        <SignedOut>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name='(auth)' options={{ headerShown: false }} />
+          </Stack>
+        </SignedOut>
+
       </ClerkLoaded>
     </ClerkProvider>
   );
