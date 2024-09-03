@@ -1,13 +1,53 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Tabs } from 'expo-router'
+import { View, Text } from 'react-native';
+import React from 'react';
+import { Tabs } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons'; // Importing icons from @expo/vector-icons
 
-export default function RoomerDesignerLayoutlayout() {
+export default function RoomerDesignerLayout() {
   return (
-    <Tabs>
-       <Tabs.Screen name='home' options={{headerShown: false}}/>
-       <Tabs.Screen name='explore' options={{headerShown: false}}/>
-       <Tabs.Screen name='profile' options={{headerShown: false}}/>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false, // Hide labels for a cleaner look
+        tabBarActiveTintColor: '#2f95dc', // Color of the active tab icon
+        tabBarInactiveTintColor: '#8e8e93', // Color of inactive tab icons
+        tabBarStyle: {
+          backgroundColor: '#fff', // Tab bar background color
+          borderTopWidth: 0, // Remove the top border of the tab bar
+          elevation: 10, // Add shadow for Android
+          shadowColor: '#000', // Shadow color for iOS
+          shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
+          shadowOpacity: 0.1, // Shadow opacity for iOS
+          shadowRadius: 4, // Shadow radius for iOS
+        },
+      }}
+    >
+      <Tabs.Screen
+        name='home'
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='home-outline' color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='explore'
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='search-outline' color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='person-outline' color={color} size={size} />
+          ),
+        }}
+      />
     </Tabs>
-   )
+  );
 }
