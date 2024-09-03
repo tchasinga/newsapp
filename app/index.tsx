@@ -1,6 +1,10 @@
+import { useRouter, Link } from "expo-router";
 import { Text, View } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <View
       style={{
@@ -10,7 +14,8 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text onPress={() => router.navigate("(tabs)/home" as any)}>Go to tabs now</Text>
+      <StatusBar style="inverted" />
     </View>
   );
 }
- 
