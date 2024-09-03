@@ -15,7 +15,7 @@ export default function Index() {
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
       <Text onPress={() => router.navigate("(tabs)/home" as any)}>Go to tabs now</Text>
-      <StatusBar style="inverted" />
+      <StatusBar style="dark" />
     </View>
   );
 }
