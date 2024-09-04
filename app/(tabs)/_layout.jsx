@@ -8,8 +8,8 @@ export default function RoomerDesignerLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarShowLabel: true, // Hide labels for a cleaner look
-        tabBarActiveTintColor: '#2f95dc', // Color of the active tab icon
+        tabBarShowLabel: true, 
+        tabBarActiveTintColor: '#2f95dc',
         tabBarInactiveTintColor: '#8e8e93', // Color of inactive tab icons
         tabBarStyle: {
           backgroundColor: '#fff', // Tab bar background color
