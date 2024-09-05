@@ -1,5 +1,6 @@
-import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo'
+import { ClerkProvider, ClerkLoaded , SignedIn, SignedOut} from '@clerk/clerk-expo'
 import { Stack } from "expo-router";
+import { Text } from 'react-native';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
@@ -13,9 +14,14 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey}>
       <ClerkLoaded>
-      <Stack screenOptions={{ headerShown: false }}>
+       <SignedIn>
+       <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
+       </SignedIn>
+       <SignedOut>
+           <Text>Singout</Text>
+        </SignedOut>
       </ClerkLoaded>
     </ClerkProvider>
   )
